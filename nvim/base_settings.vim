@@ -2,12 +2,9 @@
 let mapleader=","
 
 set number
-set relativenumber
 set nowrap
 set autoread
 set lazyredraw
-set ttyfast
-
 
 inoremap jk <Esc>
 inoremap <Esc> <Nop>
@@ -19,9 +16,8 @@ filetype plugin on    " Enable filetype-specific plugins
 
 set completeopt=longest,menu
 set complete=.,w,b,u,t
-"set wildmode=longest,list:longest
 
-set spell spelllang=en_us
+"set spell spelllang=en_us
 
 map <Leader><space> :TrimSpaces<CR>
 nnoremap <silent> <esc> :noh<CR>
@@ -30,10 +26,6 @@ nnoremap <silent> <esc> :noh<CR>
 nmap <silent> ss :sp<CR>
 nmap <silent> vv :vs<CR>
 
-"Easy copy-paste from clipboard
-nnoremap <silent> <Leader>p "+p
-nnoremap <silent> <Leader>P "+P
-nnoremap <silent> <Leader>y "+yy
 
 "UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-t>"
@@ -52,9 +44,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-H> <C-W><C-H>
 
-"Color
-set background=dark
-colorscheme gruvbox
 
 "Visual block indent
 vnoremap < <gv

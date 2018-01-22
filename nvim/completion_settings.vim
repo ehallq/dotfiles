@@ -6,6 +6,15 @@ set completeopt=menuone,menu,longest,preview
 let g:asyncomplete_remove_duplicates = 1
 
 
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server', '--stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript'],
+        \ })
+endif
+
 if executable('pyls')
   " pip install python-language-server
   au User lsp_setup call lsp#register_server({
